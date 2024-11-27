@@ -2,7 +2,7 @@ class dashBoardPage {
     selectorList(){
         const selectors = {
         dashBoardGrid: ".orangehrm-dashboard-grid",
-        myInfoButton : "[href='/web/index.php/pim/viewMyDetails']",
+        
     }
     return selectors
 }

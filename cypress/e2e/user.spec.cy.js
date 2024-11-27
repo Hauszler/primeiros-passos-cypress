@@ -9,6 +9,10 @@ const dashBoardPage = new DashBoardPage()
 const menuPage = new MenuPage()
 const myInfoPage = new MyInfoPage()
 
+//chamando o chanceJS para dados randomicos
+const Chance = require('chance')
+const chance = new Chance
+
 describe('Orage HRM Tests', () => {
 
 
@@ -19,9 +23,9 @@ describe('Orage HRM Tests', () => {
     loginPage.loginWithUser(userData.userSuccess.username,userData.userSuccess.password)
     dashBoardPage.checkLocation()
     menuPage.accessMyInfo()
-    myInfoPage.personalDetails("José","Silva", "Sauro", 939393, 9999, 123456,"2023-04-04","1989-10-10")
+    myInfoPage.personalDetails(chance.first(),chance.last(), chance.last(), 939393, 9999, 123456,"2023-04-04","1989-10-10")
     myInfoPage.savePersonalDetails()
-    myInfoPage.custonField("alo alo teste")
+    myInfoPage.custonField(chance.word())
     myInfoPage.saveCustonField()
     
   })
