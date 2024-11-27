@@ -9,20 +9,25 @@ const dashBoardPage = new DashBoardPage()
 const menuPage = new MenuPage()
 const myInfoPage = new MyInfoPage()
 
-describe('Orage HRM Tests', () => {
+describe('Login - Orage HRM Tests', () => {
 
-
-
-  it('User Profile', () => {
-   
+  it('Login - Success', () => {
+  
     loginPage.accessLoginPage()
     loginPage.loginWithUser(userData.userSuccess.username,userData.userSuccess.password)
+
+    
     dashBoardPage.checkLocation()
-    menuPage.accessMyInfo()
-    myInfoPage.personalDetails("José","Silva", "Sauro", 939393, 9999, 123456,"2023-04-04","1989-10-10")
-    myInfoPage.savePersonalDetails()
-    myInfoPage.custonField("alo alo teste")
-    myInfoPage.saveCustonField()
+    
+  })
+  
+  it('Login - Fail', () => {
+    
+    loginPage.accessLoginPage()
+    
+    loginPage.loginWithUser(userData.userFail.username,userData.userFail.password)
+    
+    loginPage.checkInvalidLogin()
     
   })
 })

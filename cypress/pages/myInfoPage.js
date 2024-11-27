@@ -40,6 +40,8 @@ class myInfoPage{
         cy.get(this.selectorsList().dropdownSelector).eq(2).click({force: true})
         cy.get('.oxd-select-dropdown > :nth-child(6)')
         cy.get(this.selectorsList().testField).clear().type(test_field)
+    }
+    saveCustonField(){
         cy.get(this.selectorsList().submitButton).eq(1).click()
         cy.get('.oxd-toast-close')
     }
